@@ -44,7 +44,7 @@
             android:summary="@string/auto_hbm_summary"
             android:title="@string/auto_hbm_title" />
 
-        <org.msm.colt.device.DeviceSettings.AutoHBMThresholdPreference
+        <org.colt.device.DeviceSettings.AutoHBMThresholdPreference
             android:key="auto_hbm_threshold"
             android:title="@string/auto_hbm_threshold_title"
             android:summary="@string/auto_hbm_threshold_summary" />
@@ -89,6 +89,7 @@
         <Preference
             android:key="clear_speaker_settings" 
             android:icon="@drawable/ic_speaker_cleaner_icon"
+            android:summary="@string/clear_speaker_summary"
             android:title="@string/clear_speaker_title" >
             <intent 
                 android:action="android.intent.action.MAIN" 
