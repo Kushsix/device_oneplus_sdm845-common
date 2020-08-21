@@ -46,6 +46,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.TwoStatePreference;
 
 import org.colt.device.DeviceSettings.FileUtils;
+import org.colt.device.DeviceSettings.speaker.ClearSpeakerActivity;
 
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -57,6 +58,7 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_DC_SWITCH = "dc";
     public static final String KEY_DCI_SWITCH = "dci";
     public static final String KEY_WIDE_SWITCH = "wide";
+    private static final String PREF_CLEAR_SPEAKER = "clear_speaker_settings";
 
     public static final String KEY_FPS_INFO = "fps_info";
 
@@ -73,6 +75,7 @@ public class DeviceSettings extends PreferenceFragment
     private ListPreference mTopKeyPref;
     private ListPreference mMiddleKeyPref;
     private ListPreference mBottomKeyPref;
+    private Preference mClearSpeakerPref;
     private static SwitchPreference mFpsInfo;
 
     @Override
@@ -128,6 +131,13 @@ public class DeviceSettings extends PreferenceFragment
         mFpsInfo = (SwitchPreference) findPreference(KEY_FPS_INFO);
         mFpsInfo.setChecked(prefs.getBoolean(KEY_FPS_INFO, false));
         mFpsInfo.setOnPreferenceChangeListener(this);
+        
+        mClearSpeakerPref = (Preference) findPreference(PREF_CLEAR_SPEAKER);
+        mClearSpeakerPref.setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity().getApplicationContext(), ClearSpeakerActivity.class);
+            startActivity(intent);
+            return true;
+        });
     }
 
     @Override
