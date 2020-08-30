@@ -21,10 +21,13 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds. -->
 <resources>
-    <!-- Doze: does this device support STATE_DOZE?  -->
+     <!-- Does this device support STATE_DOZE?  -->
     <bool name="doze_display_state_supported">true</bool>
 
     <bool name="config_statusBarBurnInProtection">true</bool>
     <integer name="config_shift_interval">30</integer>
+	
+    <!-- FPSInfoService Fps file path -->
+    <string name="config_fpsInfoSysNode" translatable="false">/sys/class/drm/sde-crtc-0/measured_fps</string>
 
 </resources>
