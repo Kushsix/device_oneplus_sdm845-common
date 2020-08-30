@@ -47,6 +47,7 @@ import androidx.preference.TwoStatePreference;
 
 import org.colt.device.DeviceSettings.FileUtils;
 import org.colt.device.DeviceSettings.speaker.ClearSpeakerActivity;
+import org.colt.device.DeviceSettings.thermal.ThermalActivity;
 
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -68,6 +69,7 @@ public class DeviceSettings extends PreferenceFragment
     private VibratorCallStrengthPreference mVibratorCallStrength;
     public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
     private VibratorNotifStrengthPreference mVibratorNotifStrength;
+    private static final String PREF_THERMAL_PROFILES = "thermal_profiles";
 
     private static TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mAutoHBMSwitch;
@@ -77,6 +79,7 @@ public class DeviceSettings extends PreferenceFragment
     private ListPreference mBottomKeyPref;
     private Preference mClearSpeakerPref;
     private static SwitchPreference mFpsInfo;
+    private Preference mThermalProfiles;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -135,6 +138,12 @@ public class DeviceSettings extends PreferenceFragment
         mClearSpeakerPref = (Preference) findPreference(PREF_CLEAR_SPEAKER);
         mClearSpeakerPref.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(getActivity().getApplicationContext(), ClearSpeakerActivity.class);
+            startActivity(intent);
+            return true;
+            
+        mThermalProfiles = (Preference)findPreference(PREF_THERMAL_PROFILES);
+        mThermalProfiles.setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity().getApplicationContext(), ThermalActivity.class);
             startActivity(intent);
             return true;
         });
