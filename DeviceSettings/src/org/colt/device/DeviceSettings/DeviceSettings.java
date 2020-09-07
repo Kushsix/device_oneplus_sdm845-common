@@ -140,7 +140,7 @@ public class DeviceSettings extends PreferenceFragment
             Intent intent = new Intent(getActivity().getApplicationContext(), ClearSpeakerActivity.class);
             startActivity(intent);
             return true;
-            
+        });    
         mThermalProfiles = (Preference)findPreference(PREF_THERMAL_PROFILES);
         mThermalProfiles.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(getActivity().getApplicationContext(), ThermalActivity.class);
