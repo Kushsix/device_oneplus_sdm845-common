@@ -1,7 +1,22 @@
 [
-   {
-      "repository" : "ShapeShiftOS/android_packages_apps_TouchGestures",
-      "target_path": "packages/apps/TouchGestures"
-   }
+  {
+    "repository"  : "kernel_oneplus_sdm845",
+    "target_path" : "kernel/oneplus/sdm845"
+  },
+  {
+    "repository"  : "vendor_oneplus_sdm845-common",
+    "target_path" : "vendor/oneplus/sdm845-common"
+  },
+  {
+    "repository"  : "device_oneplus_common",
+    "target_path" : "device/oneplus/common"
+  },
+  {
+    "repository"  : "kdrag0n/proton-clang",
+    "branch"      : "master",
+    "remote"      : "github",
+    "clone_depth" : "1",
+    "target_path" : "prebuilts/clang/host/linux-x86/clang-proton"
+  }
 ]
 
