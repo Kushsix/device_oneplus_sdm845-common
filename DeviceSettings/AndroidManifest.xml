@@ -27,7 +27,7 @@
     <protected-broadcast android:name=">com.colt.device.DeviceSettings.UPDATE_SLIDER_POSITION" />
 
     <uses-sdk
-        android:minSdkVersion="24" />
+        android:minSdkVersion="29" />
 
     <application
         android:icon="@drawable/ic_settings_device"
