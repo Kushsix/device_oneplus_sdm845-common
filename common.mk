@@ -23,7 +23,7 @@ $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-colt
+    $(LOCAL_PATH)/overlay-potato
 
 #PRODUCT_PACKAGES += \
 #    OnePlusIconShapeCircleOverlay \
@@ -179,8 +179,8 @@ PRODUCT_PACKAGES += \
     vendor.nxp.nxpnfc@1.0:64
 
 # OnePlus-Mock
-PRODUCT_PACKAGES += oneplus-mock
-PRODUCT_BOOT_JARS += oneplus-mock
+#PRODUCT_PACKAGES += oneplus-mock
+#PRODUCT_BOOT_JARS += oneplus-mock
 
 # Power
 PRODUCT_PACKAGES += \
@@ -200,8 +200,9 @@ PRODUCT_PACKAGES += \
     RemovePackages
 
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+PRODUCT_BOARD_PLATFORM := sdm845
+PRODUCT_USES_QCOM_HARDWARE := true
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # Telephony
 PRODUCT_PACKAGES += \
